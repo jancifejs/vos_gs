@@ -1,4 +1,3 @@
-source 'http://mirror.ops.rhcloud.com/mirror/ruby/'
 source 'https://rubygems.org'
 
 # Use ActiveModel has_secure_password
