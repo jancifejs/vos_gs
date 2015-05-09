@@ -20,7 +20,7 @@ html,body {
 
 .index-bg {
     background-color: #000;
-    background-image: image-url('bg.jpg');
+    background-image: url('bg.jpg');
     height: 100%;
 }
 .index-nav {
