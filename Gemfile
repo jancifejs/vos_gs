@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://mirror1.prod.rhcloud.com/mirror/ruby/'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'

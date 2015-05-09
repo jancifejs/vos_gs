@@ -1,2 +1,2 @@
 $redis = Redis.new
-Gameserver.reindex
+#Gameserver.reindex

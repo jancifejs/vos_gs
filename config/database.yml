@@ -80,6 +80,10 @@ test:
 #
 production:
   <<: *default
-  database: Game_Servers_production
-  username: Game_Servers
-  password: <%= ENV['GAME_SERVERS_DATABASE_PASSWORD'] %>
+  database: <%=ENV['OPENSHIFT_APP_NAME']%>
+  username: <%=ENV['OPENSHIFT_POSTGRESQL_DB_USERNAME']%>
+  password: <%=ENV['OPENSHIFT_POSTGRESQL_DB_PASSWORD']%>
+  host:     <%=ENV['OPENSHIFT_POSTGRESQL_DB_HOST']%>
+  port:     <%=ENV['OPENSHIFT_POSTGRESQL_DB_PORT']%>
+  min_messages: ERROR
+  reconnect: false
