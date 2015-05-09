@@ -1,0 +1,27 @@
+<% title "#{@gameserver.name}" %>
+IP: <%= @gameserver.ip %><br />
+Port: <%= @gameserver.port %>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">List of ingame players</div>
+      <div class="panel-body">
+
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Name</th>
+            <th>Score</th>
+          </tr>
+          </thead>
+
+          <tbody>
+
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+
+<%= link_to 'Edit', edit_gameserver_path(@gameserver), class: "btn btn-primary" %>
+<%= link_to 'Back', gameservers_path, class: "btn btn-primary" %>

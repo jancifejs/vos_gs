@@ -1,0 +1,20 @@
+<%= form_for(@developer) do |f| %>
+    <fieldset class="form-horizontal">
+      <div class="form-group name">
+        <%= f.label :name,class:"control-label col-sm-2" %>
+        <div class="col-sm-10">
+        <%= f.text_field :name,class: "form-control" %>
+          </div>
+      </div>
+      <!-- Change this to a button or input when using this as a form -->
+
+
+
+
+    <div class="form-group actions">
+        <div class="col-sm-offset-2 col-sm-10">
+          <%= f.submit "Save", class: "btn btn-primary" %>
+        </div>
+    </div>
+    </fieldset>
+<% end %>

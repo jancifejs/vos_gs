@@ -1,0 +1,32 @@
+<% title  "Developer - #{@developer.name}"  %>
+<div class="games">
+  <div class="panel panel-default">
+    <div class="panel-heading">List of Games</div>
+    <div class="panel-body">
+
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Name</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <% @developer.games.each do |game| %>
+            <tr>
+              <td><%= game.title %></td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<div class="form-group">
+
+    <%= link_to 'Edit', edit_developer_path(@developer), class: "btn btn-primary" %>
+    <%= link_to 'Destroy', @developer, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Back', developers_path, class: "btn btn-default" %>
+</div>

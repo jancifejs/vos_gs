@@ -1,0 +1,31 @@
+<% title "Statistics" %>
+
+<%= pie_chart (@counts) %>
+<div class="panel panel-default">
+  <div class="panel-heading">List of Game servers</div>
+
+  <div class="panel-body">
+
+
+    <table class="table">  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Count</th>
+    </tr>
+    </thead>
+
+      <tbody>
+      <% @results.each do |game| %>
+          <tr>
+            <td><%= game['title'] %></td>
+            <td><%= game['cnt'] %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+
+
+  </div>
+
+</div>

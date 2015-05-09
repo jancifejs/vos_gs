@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Game Servers</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+
+<body >
+<div class="index-bg">
+<nav class="index-nav" role="navigation" style="margin-bottom: 0"  >
+  <ul class="nav navbar-top-links navbar-left">
+        <li><%= link_to 'Game Servers',gameservers_path %></li>
+  </ul>
+  <ul class="nav navbar-top-links navbar-right">
+    <% if current_user %>
+    <li><%= link_to 'Admin',admin_index_path %></li>
+    <li><%= link_to 'Logout',logout_path %></li>
+        <% else %>
+        <li><%= link_to 'Sign up',signup_path %></li>
+        <li><%= link_to 'Login',login_path %></li>
+
+    <% end %>
+  </ul>
+
+
+  <!-- /.navbar-static-side -->
+</nav>
+
+<div class="container-full">
+  <% if notice %>
+      <% flash[:alert]='info' unless flash[:alert] %>
+      <div class="alert alert-<%= flash[:alert] %>" role="alert" id="notice"><%= notice %></div>
+  <% end %>
+
+  <%= yield %>
+</div>
+
+</div>
+</body>
+</html>

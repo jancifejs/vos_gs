@@ -1,0 +1,72 @@
+
+  <div class="row  search-panel">
+
+    <div class="col-lg-12 text-center v-center">
+
+
+      <%= form_tag('/search', remote: true, class: "col-lg-12", method: 'get',id:"search_server") do %>
+          <div class="input-group" style="width:540px;text-align:center;margin:0 auto;">
+      <%= text_field_tag :query,nil,class:"form-control input-lg",placeholer: "Enter Server name or IP adress",data: {autocomplete_source: autocomplete_path} %>
+            <span class="input-group-btn"><%= submit_tag 'GO',class:"btn btn-lg btn-primary" %></span>
+          </div>
+      <% end %>
+
+      <!--<%= form_tag('/search', remote: true, class: "col-lg-12") do %>-->
+          <!--<div class="input-group" style="width:540px;text-align:center;margin:0 auto;">-->
+            <!--<input id="search_input" class="form-control input-lg" title="Don't worry. We hate spam, and will not share your email with anyone." placeholder="Enter Server name or IP adress" type="text" name="name">-->
+            <!--<span class="input-group-btn"><input type="submit" class="btn btn-lg btn-primary"  value="GO"></span>-->
+          <!--</div>-->
+      <!--<% end %>-->
+    </div>
+
+  </div> <!-- /row -->
+<div id="gameserver">aaa
+
+</div>
+  <br /><br /><br /><br /><br /><br /><br /><br /><br />  <br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+  <div class="container">
+
+  <hr>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-heading"><h3>Hello.</h3></div>
+        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
+          Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis
+          dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
+          Aliquam in felis sit amet augue.
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-heading"><h3>Hello.</h3></div>
+        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
+          Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis
+          dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
+          Aliquam in felis sit amet augue.
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-heading"><h3>Hello.</h3></div>
+        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
+          Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis
+          dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
+          Aliquam in felis sit amet augue.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <br><br>
+      <p class="pull-right"><a href="http://www.bootply.com">Template from Bootply</a> &nbsp; ©Copyright 2013 ACME<sup>TM</sup> Brand.</p>
+      <br><br>
+    </div>
+  </div>
+</div>
