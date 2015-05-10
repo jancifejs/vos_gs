@@ -1,0 +1,40 @@
+/* line 5, /home/jancifejs/gs/app/assets/stylesheets/index.scss */
+.index-bg {
+  background-color: #000;
+  background-image: url(/assets/bg-af8081979775011d64b016a1aea77b51b4a077264f3928b571ac542e809cc6fe.jpg);
+  height: 100%;
+}
+
+/* line 10, /home/jancifejs/gs/app/assets/stylesheets/index.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 14, /home/jancifejs/gs/app/assets/stylesheets/index.scss */
+.index-nav {
+  color: #fff;
+}
+
+/* line 18, /home/jancifejs/gs/app/assets/stylesheets/index.scss */
+.index-nav .navbar-top-links li a {
+  color: white;
+}
+
+/* line 21, /home/jancifejs/gs/app/assets/stylesheets/index.scss */
+.index-nav .navbar-top-links li a:hover {
+  text-decoration: underline;
+  background: none;
+}
+
+/* line 25, /home/jancifejs/gs/app/assets/stylesheets/index.scss */
+.search-panel {
+  margin-top: 15%;
+}
+
+/* line 28, /home/jancifejs/gs/app/assets/stylesheets/index.scss */
+.container-full {
+  margin: 0 auto;
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+}
