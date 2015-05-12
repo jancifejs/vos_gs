@@ -1,4 +1,39 @@
-<p id="notice"><%= notice %></p>
+<% title "#{@game.title}" %>
+Title: <%= @game.title %><br />
+Developer: <%= link_to "#{@game.developer.name}", @game.developer %> <br />
 
-<%= link_to 'Edit', edit_game_path(@game) %> |
-<%= link_to 'Back', games_path %>
+
+<div class="panel panel-default">
+  <div class="panel-heading">List of gameservers</div>
+  <div class="panel-body">
+    <table class="table">  <thead>
+    <tr>
+      <th>Name</th>
+      <th>IP</th>
+      <th>port</th>
+      <th colspan="3"></th>
+    </tr>
+    </thead>
+
+      <tbody>
+      <% @game.gameservers.each do |gameserver| %>
+          <tr>
+            <td><%= gameserver.name %></td>
+            <td><%= gameserver.ip %></td>
+            <td><%= gameserver.port %></td>
+            <td><%= link_to 'Show', gameserver %></td>
+            <td><%= link_to 'Edit', edit_gameserver_path(gameserver) %></td>
+            <td><%= link_to 'Destroy', gameserver, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+
+
+<%= link_to 'Edit', edit_game_path(@game), class: "btn btn-primary" %>
+<%= link_to 'Back', games_path, class: "btn btn-default"  %>
+
