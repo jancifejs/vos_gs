@@ -9,7 +9,8 @@
     <tr>
       <th>Name</th>
       <th>IP</th>
-      <th>port</th>
+      <th>Players</th>
+      <th>Map</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,8 +19,9 @@
     <% @gameservers.each do |gameserver| %>
       <tr>
         <td><%= gameserver.name %></td>
-        <td><%= gameserver.ip %></td>
-        <td><%= gameserver.port %></td>
+        <td><%= gameserver.ip %>:<%= gameserver.port %></td>
+        <td><%= gameserver.players_no %>/<%= gameserver.players_max %></td>
+        <td><%= gameserver.map %></td>
         <td><%= link_to 'Show', gameserver %></td>
         <td><%= link_to 'Edit', edit_gameserver_path(gameserver) %></td>
         <td><%= link_to 'Destroy', gameserver, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -31,6 +33,20 @@
 
 </div>
 
-<br>
+<hr />
 
+
+
+<%= form_tag '/import',  method: 'post',id:"import_servers",:multipart => true do %>
+
+    <%= file_field_tag 'file' %><%= submit_tag 'Import', class: "btn btn-primary" %>
+<% end %>
+
+<div id="import_bar">
+
+</div>
+
+
+
+<hr />
 <%= link_to 'New Server', new_gameserver_path, class: "btn btn-primary" %>

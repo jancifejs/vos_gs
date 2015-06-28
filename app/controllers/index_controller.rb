@@ -20,12 +20,16 @@ class IndexController < ApplicationController
   #   params.require(:server).permit(:name)
   #   end
   def index
-
   end
   def search
 
     @gameserver = Gameserver.find_by_name(params[:query])
-    render js: @gameserver
+    respond_to do |format|
+      format.html { redirect_to index }
+      format.js
+    end
+
+
     #render json: @gameserver
 #    redirect_to @gameserver
   #  Gameserver.reindex
@@ -36,6 +40,7 @@ class IndexController < ApplicationController
 
 #       render js: 'index.js'
     # render :json => @gameservers
+
   end
 
 

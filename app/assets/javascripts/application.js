@@ -5,7 +5,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
-
 //= require twitter/bootstrap
 
 //= require turbolinks
@@ -18,4 +17,7 @@ $(document).on('page:change', function () {
         source: $("#query").data('autocomplete-source'),
         minLength: 2
     });
+
+
+
 });

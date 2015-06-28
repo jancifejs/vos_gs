@@ -75,6 +75,8 @@ Rails.application.routes.draw do
     resources :gameservers
     resources :games
 #  end
+
+
   get '/' => 'index#index'
   get '/search' => 'index#search'
   get '/login' => 'sessions#new'
@@ -87,4 +89,6 @@ Rails.application.routes.draw do
   get '/statistics' => 'statistics#index'
   get 'redis' => 'redisc#test'
   get 'autocomplete' => 'index#autocomplete'
+  get "/fetch_items" => 'items#from_category', as: 'fetch_items'
+  post "/import" => 'gameservers#import', as: 'import_servers'
 end
