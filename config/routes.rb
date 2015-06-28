@@ -91,4 +91,5 @@ Rails.application.routes.draw do
   get 'autocomplete' => 'index#autocomplete'
   get "/fetch_items" => 'items#from_category', as: 'fetch_items'
   post "/import" => 'gameservers#import', as: 'import_servers'
+  get "/popular" => 'index#popular', as: 'popular_servers'
 end

@@ -29,17 +29,15 @@ class IndexController < ApplicationController
       format.js
     end
 
+  end
 
-    #render json: @gameserver
-#    redirect_to @gameserver
-  #  Gameserver.reindex
-  #  @gameservers = Gameserver.search params[:name]
-  #  @gameservers.each do |server|
-  #    puts server.name
-  #  end
+  def popular
 
-#       render js: 'index.js'
-    # render :json => @gameservers
+    @gameservers = Gameserver.all.where(enabled=true)
+    respond_to do |format|
+      format.html { redirect_to index }
+      format.js
+    end
 
   end
 

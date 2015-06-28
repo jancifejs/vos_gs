@@ -41,3 +41,10 @@ html,body {
 
     overflow:hidden;
 }
+#search_result {
+    margin-top: 20px;
+}
+
+.clickable {
+    cursor: pointer;
+}

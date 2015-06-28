@@ -1,0 +1,43 @@
+<% @gameservers.each do |server| %>
+    <div class="col-md-8 col-md-offset-2">
+
+
+      <div class="panel panel-primary">
+
+        <div class="panel-heading clickable" onclick="$('#body<%= server.id %>').toggle(500)" ><%= server.name %> |
+
+          <strong>IP:</strong> <%= server.ip %>:<%= server.port %> |
+          <strong>Players:</strong> <%= server.players_no %>/<%= server.players_max %> |
+          <strong>Map:</strong> <%= server.map %><br />
+        </div>
+        <div class="panel-body" id="body<%= server.id %>" style="display: none">
+          <div>
+
+          </div>
+          <table class="table">
+            <thead>
+            <tr>
+              <th>Name</th>
+              <th>Score</th>
+            </tr>
+
+            </thead>
+
+            <tbody>
+            <% if server.server.players %>
+                <% server.server.players.each do |player| %>
+
+                    <tr>
+                      <td><%= player[0] %></td>
+                      <td><%= player[1] %></td>
+                    </tr>
+                <% end %>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+
+<% end %>

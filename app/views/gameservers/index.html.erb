@@ -11,6 +11,7 @@
       <th>IP</th>
       <th>Players</th>
       <th>Map</th>
+      <th>Enabled</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,6 +23,7 @@
         <td><%= gameserver.ip %>:<%= gameserver.port %></td>
         <td><%= gameserver.players_no %>/<%= gameserver.players_max %></td>
         <td><%= gameserver.map %></td>
+        <td><%= gameserver.enabled %></td>
         <td><%= link_to 'Show', gameserver %></td>
         <td><%= link_to 'Edit', edit_gameserver_path(gameserver) %></td>
         <td><%= link_to 'Destroy', gameserver, method: :delete, data: { confirm: 'Are you sure?' } %></td>

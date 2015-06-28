@@ -1,21 +1,37 @@
-<div class="col-md-4 col-md-offset-4">
+<div class="col-md-8 col-md-offset-2">
 
 
-<div class="panel panel-default">
-  <div class="panel-heading"><%= @gameserver.ip %>: <%= @gameserver.port %><br /></div>
-  <div class="panel-body">
+<div class="panel panel-primary">
 
+  <div class="panel-heading clickable" onclick="$('#body<%= @gameserver.id %>').toggle(500)" ><%= @gameserver.name %> |
 
+    <strong>IP:</strong> <%= @gameserver.ip %>:<%= @gameserver.port %> |
+    <strong>Players:</strong> <%= @gameserver.players_no %>/<%= @gameserver.players_max %> |
+    <strong>Map:</strong> <%= @gameserver.map %><br />
+  </div>
+  <div class="panel-body" id="body<%= @gameserver.id %>" style="display: none">
+    <div>
+
+      </div>
     <table class="table">
       <thead>
       <tr>
         <th>Name</th>
         <th>Score</th>
       </tr>
+
       </thead>
 
       <tbody>
+      <% if @gameserver.server.players %>
+      <% @gameserver.server.players.each do |player| %>
 
+          <tr>
+            <td><%= player[0] %></td>
+            <td><%= player[1] %></td>
+          </tr>
+      <% end %>
+      <% end %>
       </tbody>
     </table>
   </div>

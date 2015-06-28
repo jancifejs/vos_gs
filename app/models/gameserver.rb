@@ -1,7 +1,7 @@
 class Gameserver < ActiveRecord::Base
   belongs_to :game
   after_initialize :update_info
-  attr_accessor :info,:players_no,:players_max,:map,:players
+  attr_accessor :players_no,:players_max,:map,:server
 
   searchkick text_start: [:name]
 
@@ -10,23 +10,29 @@ class Gameserver < ActiveRecord::Base
     self.port=port
   end
 
+  def parse_score(str)
+    str.split(',')
+  end
   def update_info
-    server = SourceServer.new(self.ip, self.port)
+    self.server = SourceServer.new(self.ip, self.port)
     begin
-      server.init
-      info=server.server_info
+      self.server.init
+      info=self.server.server_info
 
       self.players_no = info[:number_of_players]
       self.players_max = info[:max_players]
       self.map=info[:map_name]
-      self.players = server.players
+   #   print self.server.players
    # self.player=server.players
-      if self.name!=info[:server_name]
+      if self.name!=info[:server_name] || self.enabled==false
         self.name=info[:server_name]
+        self.enabled=true
         self.save
       end
-    rescue Exception
-      self.name="NOT CONNECTED YET"
+    rescue Exception => ex
+
+      logger.error("Message for the log file #{ex.message}")
+
     end
     #self.name=self.info.`` [:server_name]
     #print self.info
