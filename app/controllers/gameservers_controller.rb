@@ -86,7 +86,7 @@ class GameserversController < ApplicationController
     end
 
   #  print file_content
-   #   gs = Gameserver.new
+      gs = Gameserver.new
     ip,port = file_content[0].split(":")
     gs.add_server_info(ip,port)
 
