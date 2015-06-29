@@ -86,9 +86,6 @@ class GameserversController < ApplicationController
     end
 
   #  print file_content
-      gs = Gameserver.new
-    ip,port = file_content[0].split(":")
-    gs.add_server_info(ip,port)
 
       respond_to do |format|
         format.html { redirect_to gameservers_path, notice: 'Servers were successfully imported.' }
