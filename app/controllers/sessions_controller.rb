@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
   layout 'index.html'
-  before_filter :authorize, only: [:destroy]
   def create
     user = User.find_by_email(params[:email])
     # If the user exists AND the password entered is correct.

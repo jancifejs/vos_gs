@@ -22,11 +22,12 @@ class Gameserver < ActiveRecord::Base
       self.players_no = info[:number_of_players]
       self.players_max = info[:max_players]
       self.map=info[:map_name]
-
+      puts self.server.players
    # self.player=server.players
       if self.name!=info[:server_name]
         self.name=info[:server_name]
         self.save
+
       end
     rescue Exception => ex
 
