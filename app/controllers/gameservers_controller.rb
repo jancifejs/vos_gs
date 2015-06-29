@@ -74,25 +74,21 @@ class GameserversController < ApplicationController
       # end
     file_content.gsub!(/\r\n?/, "\n")
 
-    count = file_content.size
-    i=0
+
     file_content.each_line do |line|
 
       ip,port = line.split(":")
       gs = Gameserver.new()
       gs.init(ip,port)
       gs.update_info
-      i+=1
-      @progress = (i/count * 100)
 
-      render 'import_bar.js'
 
     end
 
   #  print file_content
    #   gs = Gameserver.new
     ip,port = file_content[0].split(":")
-    #gs.add_server_info(ip,port)
+    gs.add_server_info(ip,port)
 
       respond_to do |format|
         format.html { redirect_to gameservers_path, notice: 'Servers were successfully imported.' }

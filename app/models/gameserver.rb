@@ -24,9 +24,8 @@ class Gameserver < ActiveRecord::Base
       self.map=info[:map_name]
    #   print self.server.players
    # self.player=server.players
-      if self.name!=info[:server_name] || self.enabled==false
+      if self.name!=info[:server_name]
         self.name=info[:server_name]
-        self.enabled=true
         self.save
       end
     rescue Exception => ex
